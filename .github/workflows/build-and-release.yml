@@ -1,0 +1,38 @@
+name: Build and Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build executables
+        run: ${{ github.workspace }}/build.cmd
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: notifications-at-top
+          path: |
+            ${{ github.workspace }}/topleft.exe
+            ${{ github.workspace }}/topright.exe
+            ${{ github.workspace }}/topmiddle.exe
+            ${{ github.workspace }}/bottomleft.exe
+
+      - name: Create release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            topleft.exe
+            topright.exe
+            topmiddle.exe
+            bottomleft.exe
