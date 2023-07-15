@@ -6,11 +6,15 @@ Update 1.1.0: Support For Microsoft Teams (Work, School, Personal) Notifications
 
 
 # Usage
-- Download the latest release from [here](https://github.com/SamarthCat/notifications-at-top/releases/latest)
+- Download the latest release from [here](https://github.com/HeyItsJono/notifications-at-top/releases/latest)
 
 - Run ``` topleft.exe ``` for the top left
 
 - Run ``` topright.exe ``` for the top right
+
+- Run ``` topmiddle.exe ``` for the top middle
+
+- Run ``` bottomleft.exe ``` for the top right
 
 - Add a shortcut to it in ``` %appdata%\Microsoft\Windows\Start Menu\Programs\Startup ``` if you want it to run on boot
 
